@@ -1,0 +1,4 @@
+RewriteEngine on 
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?project.dev [NC] 
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?project.*$ [NC] 
+RewriteRule \.(gif|jpg|png)$ - [F]
