@@ -1,43 +1,55 @@
 <?php
-$id = $_GET['id'];
-$DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'].'/';
-$filename = $DOCUMENT_ROOT.'data/'.'guestbook.txt';
-
-$person = file($filename);
-
-
-?>
-<span style="text-align:left; margin:0px 0px;"><img src="../img/ok.png" width="23">
-<strong>&nbsp;Personal Info</strong>
-<button onclick="kharna();" style="float:right; background-color:red;"><strong>X</strong></button></span>
-<br><br>
-<div style="margin:0px 0px; padding:0px 0px;">
-	<table align="center" class="nostyle">
-		<tr>
-
-		<?php 
-		$line =  $person[$id]; 
-
-		list($lastname, $firstname, $contactchoice, $phoneormemail, $city, $contact_date, $comments) = explode('|', $line);
-		echo "<td>Hming</td>";
-		echo "<td>:&nbsp;&nbsp;".$firstname ."&nbsp;".$lastname."</td>";
+session_start();
+require_once "config/config.php";
+if(isset($_POST['username'])){
+	$username = htmlspecialchars($_POST['username']);
+	$password = md5($_POST['password']);
+	if($username===USERNAME && $password===PASSWORD){
+		$_SESSION['username']=$username;
+		$_SESSION['password']=$password;
+		header("location:/");
+	}else{
+		$status = "Wrong Username or Password!";
 		
-		?>
-	</tr>
-	<tr>
-		<?php
-			echo "<td>Contact</td>";
-			echo "<td>:&nbsp;&nbsp;".$phoneormemail."</td>";
-		?>
+	}
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Login</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="img/favicon.ico" rel="icon" type="image/gif"/>
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<div class="login">
+		<?php include "view/header.tmp.php"; ?>
+		<hr>
+		<div class="Login">
+			<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+				<fieldset>
+					<legend style="font-weight:bolder;">Member login</legend>
+					<?php
+					if($status){ ?>
+					<span style="color:white; text-align:center; background-color:red; padding:5px 5px;"><?php echo $status; ?></span>
+					<?php } ?>
+					<ul>
+						<li><label for="username">Login ID</label>
+							<input type="text" name="username" id="username" autocomplete="off" autofocus accesskey="u" tabindex="1">
+						</li>
+						<li><label for="password">Secret ID</label>
+							<input type="password" name="password" id="password" accesskey="p" tabindex="2">
+						</li>
+						<li style="padding-left:20%;"><input type="submit" value="Login">&nbsp;<input type="reset" onclick="reload();" value="Reset"></li>
 
-	</tr>
-	<tr>
-		<?php
-			echo "<td>City</td>";
-			echo "<td>:&nbsp;&nbsp;".$city."</td>";
-		?>
+					</ul>
 
-	</tr>
-	</table>
-</div>
-<p></p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+		
+</body>
+</html>
