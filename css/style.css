@@ -1,0 +1,140 @@
+body{
+	background-image: url('../img/bg.jpg');
+	font-size: 20px;
+}
+.wrapper{
+	position: relative;
+	margin:10px auto 0;
+	width: 60%;
+	height: auto;
+	padding:10px 10px;
+	/*background-image: url('../img/bg.jpg');*/
+	background-color: rgba(59,7,7,1);
+	color:white;
+	
+}
+.login{
+	margin:100px auto 0;
+	width: 500px;
+	height: auto;
+	padding:10px 10px;
+	/*background-image: url('../img/bg.jpg');*/
+	background-color: rgba(59,7,7,.9);
+	color:white;
+	border-radius: 20px 20px 20px 20px;	
+	box-shadow: 3px 3px 3px 5px rgba(0,0,0,.7);
+}
+ul{
+	list-style: none;
+}
+input{
+	width:220px;
+	height: 30px;
+	font-size: 20px;
+}
+input[type="radio"]{
+	width:100px;
+	height: 20px;
+	font-size: 20px;
+}
+select{
+	width:200px;
+	height: 30px;
+	font-size: 20px;	
+}
+li label{
+	line-height: 60px;
+	text-align: left;
+}
+input[type="submit"]{
+	width:90px;
+	height: 40px;
+
+}
+input[type="reset"]{
+	width:90px;
+	height: 40px;
+}
+.footer{
+	text-align: center;
+	background-color: white;
+	color:black;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+table{
+	
+	background-color: white;
+	color:black;
+	border: 1px solid green;
+	border-collapse: collapse;
+}
+th{
+	text-align: center;
+	padding: 5px 5px;
+	border: 1px solid green;
+}
+td{
+	padding: 5px 5px;
+	border: 1px solid green;
+}
+
+#nav {
+  list-style: none;
+  padding: 0;
+  float: right;
+  margin: 4px 0px 20px;
+}
+a{
+	text-decoration: none;
+}
+
+#nav li {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+  background-color: green;
+  padding:10px 10px;
+  border-radius: 10px 0px 0px 0px;
+}
+
+#nav li:hover {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+  background-color: white;
+  padding:10px 10px;
+  border-radius: 10px 0px 0px 0px;
+  cursor: pointer;
+}
+textarea{
+	font-size: 1.0em;
+	color:red;
+}
+dt{
+	font-weight: bolder;
+}
+
+#view{
+	position :absolute;
+   	margin : 1px auto 5px;
+   	top: 30%;
+	left: 45%;
+   	z-index:15;
+	width : 350px;
+	height : auto;
+	background-color : rgba(59,7,7,1);
+	color : white;
+	padding: 10px 10px;
+	box-shadow: 8px 8px 8px 8px rgba(0,0,0,.8);
+	border: 3px groove rgba(59,7,7,1);
+}
+
+.nostyle{
+	background-color: rgba(59,7,7,1);
+	color: white;
+	border:1px solid rgba(59,7,7,1);
+}
