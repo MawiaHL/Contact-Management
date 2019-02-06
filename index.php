@@ -13,4 +13,3 @@ if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
 require_once "controller/controller.php";
 $zirna=new Contactbook();
 $zirna->create();
-?>
