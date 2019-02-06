@@ -49,7 +49,6 @@ if(isset($_POST['username'])){
 				</fieldset>
 			</form>
 		</div>
-	</div>
-		
+	</div>		
 </body>
 </html>
